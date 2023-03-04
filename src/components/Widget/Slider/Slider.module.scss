@@ -1,0 +1,29 @@
+.block {
+  text-align: center;
+  height: 150px;
+  @media (max-width: 770px) { height: 120px; }
+
+  .textBlock {
+    height: 50px;
+    padding: 0 8px;
+    line-height: calc(0.5em + 1vw);
+    @media (max-width: 770px) { padding: 0 5px; height: 55px; }
+
+    a {
+      font-size: calc(0.2em + 0.8vw);
+      text-decoration: none;
+      color: #fbf8f8;
+      span {
+        color: #041045;
+      }
+    }
+  }
+
+  .img {
+    width: 95%;
+    height: 90px;
+    margin: 10px auto;
+    @media (max-width: 770px) { height: 60px; }
+  }
+}
+
