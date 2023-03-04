@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/widgets-app/static/css/main.466be3ef.css",
+    "main.js": "/widgets-app/static/js/main.26ac1d5a.js",
+    "static/media/clearNight.jpg": "/widgets-app/static/media/clearNight.96a704afd464ec0e8006.jpg",
+    "static/media/snowyDay.jpg": "/widgets-app/static/media/snowyDay.c8f5248fea4cec9a1f10.jpg",
+    "static/media/thunder.jpg": "/widgets-app/static/media/thunder.1ea8534f2c40a03dc99d.jpg",
+    "static/media/rainyDay.jpg": "/widgets-app/static/media/rainyDay.7743c8dae586b1965f17.jpg",
+    "static/media/rainyNight.jpg": "/widgets-app/static/media/rainyNight.552e422a1bb5b521a9f8.jpg",
+    "static/media/clearDay.jpg": "/widgets-app/static/media/clearDay.133b0a79768bf0a992d5.jpg",
+    "static/media/snowyNight.jpg": "/widgets-app/static/media/snowyNight.337da5bbc88d27e6679c.jpg",
+    "static/media/cloudyDay.jpg": "/widgets-app/static/media/cloudyDay.60e4883d98cd832cebc9.jpg",
+    "static/media/slick.svg": "/widgets-app/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/widgets-app/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/widgets-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/widgets-app/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/widgets-app/index.html",
+    "main.466be3ef.css.map": "/widgets-app/static/css/main.466be3ef.css.map",
+    "main.26ac1d5a.js.map": "/widgets-app/static/js/main.26ac1d5a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.466be3ef.css",
+    "static/js/main.26ac1d5a.js"
+  ]
+}
