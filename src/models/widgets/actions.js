@@ -1,12 +1,6 @@
 import axios from 'axios';
-import { v4 as uuidv4 } from 'uuid';
-import { SET_WIDGET, DELETE_WIDGET, UPDATE_WIDGET } from './constants';
-import { newsApiKey, weatherApiKey } from '../../utils/constants';
-
-export const setWidget = (payload) => ({
-  type: SET_WIDGET,
-  payload,
-});
+import { DELETE_WIDGET, UPDATE_WIDGET } from './constants';
+import { newsApiKey, weatherApiKey } from '../../constants/apikeys';
 
 export const deleteWidget = (payload) => ({
   type: DELETE_WIDGET,
@@ -18,38 +12,18 @@ export const updateWidget = (payload) => ({
   payload,
 });
 
-export const loadInitialData = (defaultCity) => async (dispatch) => {
-  const id = uuidv4();
-  const widget = {
-    [id]: {
-      city: defaultCity,
-    },
-  };
-  await axios.get(`https://newsapi.org/v2/everything?q=${defaultCity}&apiKey=${newsApiKey}`)
-    .then((response) => {
-      widget[id].newsData = (response.data.articles).slice(0, 12);
-      return widget.newsData;
-    });
-  await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${weatherApiKey}`)
-    .then((response) => {
-      widget[id].weatherData = (response.data);
-      return widget.weatherData;
-    });
-  dispatch(setWidget(widget));
-};
-
 export const changeCity = (id, selectedCity) => async (dispatch) => {
   const widget = {
     [id]: {
       city: selectedCity,
     },
   };
-  await axios.get(`https://newsapi.org/v2/everything?q=${selectedCity}&apiKey=${newsApiKey}`)
+  await axios.get(`https://gnews.io/api/v4/search?q=${selectedCity}&apikey=${newsApiKey}`)
     .then((response) => {
-      widget[id].newsData = (response.data.articles).slice(0, 12);
+      widget[id].newsData = (response.data.articles);
       return widget.newsData;
     });
-  await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=${weatherApiKey}`)
+  await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=${weatherApiKey}`)
     .then((response) => {
       widget[id].weatherData = (response.data);
       return widget.weatherData;

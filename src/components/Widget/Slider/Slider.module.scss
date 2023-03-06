@@ -14,15 +14,15 @@
       text-decoration: none;
       color: #fbf8f8;
       span {
-        color: #041045;
+        color: #0c1b5b;
       }
     }
   }
 
   .img {
-    width: 95%;
+    width: 80%;
     height: 90px;
-    margin: 10px auto;
+    margin: 7px auto;
     @media (max-width: 770px) { height: 60px; }
   }
 }

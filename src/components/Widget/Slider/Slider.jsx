@@ -14,24 +14,22 @@ class SimpleSlider extends React.PureComponent {
     };
     const { news } = this.props;
     return (
-      <div>
-        <Slider {...settings}>
-          {news.map((element) => (
-            <div key={element.publishedAt} className={styles.block}>
-              <div className={styles.textBlock}>
-                <a href={element.url} target="_blank" rel="noreferrer">
-                  {`${element.title.slice(0, 55)}...`}
-                  {' '}
-                  <span>
-                    Read more
-                  </span>
-                </a>
-              </div>
-              <img src={element.urlToImage} alt="news img" className={styles.img} />
+      <Slider {...settings}>
+        {news.map((element) => (
+          <div key={element.publishedAt} className={styles.block}>
+            <img src={element.image} alt="news img" className={styles.img} />
+            <div className={styles.textBlock}>
+              <a href={element.url} target="_blank" rel="noreferrer">
+                {`${element.title.slice(0, 55)}...`}
+                {' '}
+                <span>
+                  Read more
+                </span>
+              </a>
             </div>
-          ))}
-        </Slider>
-      </div>
+          </div>
+        ))}
+      </Slider>
     );
   }
 }

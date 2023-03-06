@@ -29,6 +29,11 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
       justify-items: center;
+
+      p {
+        margin-block-start: 0;
+        margin-block-end: 0;
+      }
     }
   }
 

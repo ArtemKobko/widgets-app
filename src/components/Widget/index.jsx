@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment-timezone';
+import cities from '../../constants/cities';
 import SelectAutoWidth from './DropDown';
-import imgSwitch from '../../utils/imgSwitch';
+import getImgByWeatherId from '../../utils/imgSwitch';
 import SimpleSlider from './Slider/Slider';
 import styles from './Widget.module.scss';
 import { deleteWidget } from '../../models/widgets/actions';
@@ -42,33 +44,29 @@ class Widget extends React.PureComponent {
   }
 
   render() {
-    const { city } = this.props;
-    const { newsData } = this.props;
-    const { weatherData } = this.props;
+    const {
+      city, newsData, weatherData, id, dispatch,
+    } = this.props;
     const { currentTime } = this.state;
-    const { id } = this.props;
-    const { dispatch } = this.props;
-
     const closeWidget = (event) => {
-      event.preventDefault();
       dispatch(deleteWidget(event.target.id));
     };
 
     return (
       <div className={styles.widget}>
-        <div style={{ backgroundImage: `url(${imgSwitch(weatherData.weather[0].id, currentTime)})` }} className={styles.widget}>
+        <div style={{ backgroundImage: `url(${getImgByWeatherId(weatherData.weather[0].id, moment.tz(cities[city]).hours())})` }} className={styles.widget}>
           <div className={styles.widgetProperties}>
             <SelectAutoWidth defaultCity={city} id={id} />
-            <div>{currentTime}</div>
-            <div>
+            <p>{currentTime}</p>
+            <p>
               {weatherData.weather[0].main}
-            </div>
-            <div>
+            </p>
+            <p>
               {Math.round(weatherData.main.temp - 273)}
               &#8451;
-            </div>
+            </p>
           </div>
-          <button type="button" id={id} onClick={(event) => closeWidget(event)} className={styles.closeButton}>X</button>
+          <button type="button" id={id} onClick={closeWidget} className={styles.closeButton}>X</button>
         </div>
         <SimpleSlider news={newsData} />
       </div>

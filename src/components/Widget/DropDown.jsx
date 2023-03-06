@@ -29,13 +29,13 @@ class SelectAutoWidth extends Component {
     return (
       <div>
         <FormControl sx={{ m: 1, minWidth: 80, padding: 0 }}>
-          <InputLabel sx={{ color: '#fbf8f8', fontSize: 'calc(0.3em + 0.7vw)', padding: 0 }} id="demo-simple-select-autowidth-label">City</InputLabel>
+          <InputLabel sx={{ color: '#fbf8f8', fontSize: 'calc(0.4em + 0.7vw)', padding: 0 }} id="demo-simple-select-autowidth-label">City</InputLabel>
           <Select
             sx={{
               boxShadow: 'none',
               '.MuiOutlinedInput-notchedOutline': { border: 0 },
               color: '#fbf8f8',
-              fontSize: 'calc(0.4em + 0.5vw)',
+              fontSize: 'calc(0.5em + 0.5vw)',
               padding: 0,
             }}
             labelId="demo-simple-select-autowidth-label"

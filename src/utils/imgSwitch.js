@@ -9,22 +9,21 @@ import snowyNight from '../images/snowyNight.jpg';
 import fog from '../images/fog.jpg';
 import thunder from '../images/thunder.jpg';
 
-function imgSwitch(weatherId, time) {
+function getImgByWeatherId(weatherId, time) {
   let image;
-
   if (weatherId >= 200 && weatherId < 300) {
     image = thunder;
   }
-  if ((weatherId >= 300 && weatherId < 600) && (time <= '21:00' || time >= '05:00')) {
+  if ((weatherId >= 300 && weatherId < 600) && (time <= 21 || time >= 5)) {
     image = rainyDay;
   }
-  if ((weatherId >= 300 && weatherId < 600) && (time >= '21:00' || time <= '05:00')) {
+  if ((weatherId >= 300 && weatherId < 600) && (time >= 21 || time <= 5)) {
     image = rainyNight;
   }
-  if ((weatherId >= 600 && weatherId < 700) && (time <= '21:00' || time >= '05:00')) {
+  if ((weatherId >= 600 && weatherId < 700) && (time <= 21 || time >= 5)) {
     image = snowyDay;
   }
-  if ((weatherId >= 600 && weatherId < 700) && (time >= '21:00' || time <= '05:00')) {
+  if ((weatherId >= 600 && weatherId < 700) && (time >= 21 || time <= 5)) {
     image = snowyNight;
   }
   if (weatherId >= 700 && weatherId < 800) {
@@ -33,16 +32,16 @@ function imgSwitch(weatherId, time) {
   if (weatherId === 800) {
     image = clearDay;
   }
-  if (weatherId === 800 && (time >= '21:00' || time <= '05:00')) {
+  if (weatherId === 800 && (time >= 21 || time <= 5)) {
     image = clearNight;
   }
-  if (weatherId >= 801 && (time <= '21:00' || time >= '05:00')) {
+  if (weatherId >= 801 && (time <= 21 || time >= 5)) {
     image = cloudyDay;
   }
-  if (weatherId >= 801 && (time >= '21:00' || time <= '05:00')) {
+  if (weatherId >= 801 && (time >= 21 || time <= 5)) {
     image = cloudyNight;
   }
   return image;
 }
 
-export default imgSwitch;
+export default getImgByWeatherId;

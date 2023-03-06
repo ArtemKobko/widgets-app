@@ -1,4 +1,4 @@
-import { SET_WIDGET, DELETE_WIDGET, UPDATE_WIDGET } from './constants';
+import { DELETE_WIDGET, UPDATE_WIDGET } from './constants';
 
 const initialState = {
   allWidgets: {
@@ -8,7 +8,7 @@ const initialState = {
 
 function widgetsReducer(state = initialState, action) {
   switch (action.type) {
-    case SET_WIDGET:
+    case UPDATE_WIDGET:
       return {
         ...state,
         allWidgets: {
@@ -28,14 +28,6 @@ function widgetsReducer(state = initialState, action) {
         ...state,
         allWidgets: {
           ...state.allWidgets,
-        },
-      };
-    case UPDATE_WIDGET:
-      return {
-        ...state,
-        allWidgets: {
-          ...state.allWidgets,
-          ...action.payload,
         },
       };
     default:
